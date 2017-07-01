@@ -20,6 +20,11 @@ class HuffmanSuite extends FunSuite {
       assert(weight(t1) === 5)
     }
   }
+  test("weight of a tree") {
+    new TestTrees {
+      assert(weight(t2) === 9)
+    }
+  }
 
 
   test("chars of a larger tree") {
@@ -42,6 +47,13 @@ class HuffmanSuite extends FunSuite {
   test("combine of some leaf list") {
     val leaflist = List(Leaf('e', 1), Leaf('t', 2), Leaf('x', 4))
     assert(combine(leaflist) === List(Fork(Leaf('e',1),Leaf('t',2),List('e', 't'),3), Leaf('x',4)))
+  }
+
+  test("test test"){
+    new TestTrees{
+      println(encode(t1)("ab".toList))
+      assert(encode(t1)("ab".toList) === encode(t1)("ab".toList))
+    }
   }
 
 
